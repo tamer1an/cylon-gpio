@@ -18,6 +18,7 @@ var Drivers = {
   "rgb-led": require("./lib/rgb-led"),
   "temperature-sensor": require("./lib/temperature-sensor"),
   "tp401": require("./lib/tp401"),
+  "hcsr04": require("./lib/hcsr04"),
 };
 
 module.exports = {
