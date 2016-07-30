@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cylon-gpio@git+https://github.com/tamer1an/cylon-gpio.git",
+        "scope": null,
+        "escapedName": "cylon-gpio",
+        "name": "cylon-gpio",
+        "rawSpec": "git+https://github.com/tamer1an/cylon-gpio.git",
+        "spec": "git+https://github.com/tamer1an/cylon-gpio.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:tamer1an/cylon-gpio.git",
+          "sshUrl": "git+ssh://git@github.com/tamer1an/cylon-gpio.git",
+          "httpsUrl": "git+https://github.com/tamer1an/cylon-gpio.git",
+          "gitUrl": "git://github.com/tamer1an/cylon-gpio.git",
+          "shortcut": "github:tamer1an/cylon-gpio",
+          "directUrl": "https://raw.githubusercontent.com/tamer1an/cylon-gpio/master/package.json"
+        }
+      },
+      "/mnt/c/arduino-ide/home-defence"
+    ]
+  ],
+  "_from": "git+https://github.com/tamer1an/cylon-gpio.git",
+  "_id": "cylon-gpio@0.29.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cylon-gpio",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cylon-gpio@git+https://github.com/tamer1an/cylon-gpio.git",
+    "scope": null,
+    "escapedName": "cylon-gpio",
+    "name": "cylon-gpio",
+    "rawSpec": "git+https://github.com/tamer1an/cylon-gpio.git",
+    "spec": "git+https://github.com/tamer1an/cylon-gpio.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:tamer1an/cylon-gpio.git",
+      "sshUrl": "git+ssh://git@github.com/tamer1an/cylon-gpio.git",
+      "httpsUrl": "git+https://github.com/tamer1an/cylon-gpio.git",
+      "gitUrl": "git://github.com/tamer1an/cylon-gpio.git",
+      "shortcut": "github:tamer1an/cylon-gpio",
+      "directUrl": "https://raw.githubusercontent.com/tamer1an/cylon-gpio/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/tamer1an/cylon-gpio.git#325229850be1cf23e1b490976176d98a4bffcb6a",
+  "_shasum": "c2091d3e023c4eda5f0d96e33487cf7e99f7bda6",
+  "_shrinkwrap": null,
+  "_spec": "cylon-gpio@git+https://github.com/tamer1an/cylon-gpio.git",
+  "_where": "/mnt/c/arduino-ide/home-defence",
+  "author": {
+    "name": "The Hybrid Group",
+    "email": "cylonjs@hybridgroup.com"
+  },
+  "bugs": {
+    "url": "https://github.com/hybridgroup/cylon-gpio/issues"
+  },
+  "dependencies": {
+    "cylon": "^1.3.0"
+  },
+  "description": "Cylon module for General Purpose Input/Output (GPIO)",
+  "devDependencies": {
+    "chai": "~1.7.2",
+    "eslint": "0.22.1",
+    "mocha": "~1.12.1",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.4.0"
+  },
+  "gitHead": "325229850be1cf23e1b490976176d98a4bffcb6a",
+  "hardware": {
+    "*": false,
+    "./": false,
+    "./index.js": true,
+    "./lib": true
+  },
+  "homepage": "http://cylonjs.com",
+  "keywords": [
+    "cylon",
+    "cylonjs",
+    "cylons",
+    "robot",
+    "robots",
+    "robotics",
+    "iot",
+    "hardware",
+    "gpio"
+  ],
+  "license": "Apache-2.0",
+  "name": "cylon-gpio",
+  "optionalDependencies": {},
+  "readme": "# Cylon.js For GPIO\n\nCylon.js (http://cylonjs.com) is a JavaScript framework for robotics, physical computing, and the Internet of Things (IoT).\n\nThis module provides drivers for General Purpose Input/Output (GPIO) devices (https://en.wikipedia.org/wiki/General_Purpose_Input/Output). It must be used along with an adaptor module such as cylon-firmata (https://github.com/hybridgroup/cylon-firmata) that supports the needed interfaces for GPIO devices.\n\nWant to use Ruby on robots? Check out our sister project Artoo (http://artoo.io)\n\nWant to use the Go programming language to power your robots? Check out our sister project Gobot (http://gobot.io).\n\n[![Build Status](https://secure.travis-ci.org/hybridgroup/cylon-gpio.png?branch=master)](http://travis-ci.org/hybridgroup/cylon-gpio) [![Code Climate](https://codeclimate.com/github/hybridgroup/cylon-gpio/badges/gpa.svg)](https://codeclimate.com/github/hybridgroup/cylon-gpio) [![Test Coverage](https://codeclimate.com/github/hybridgroup/cylon-gpio/badges/coverage.svg)](https://codeclimate.com/github/hybridgroup/cylon-gpio)\n\n## Getting Started\nInstall the module with: `npm install cylon cylon-gpio`\n\nNote you must also install whichever adaptor you want to use, such as: `npm install cylon-firmata`\n\n## Example\n\n```javascript\nvar Cylon = require('cylon');\n\n// Initialize the robot\nCylon.robot({\n  connections: {\n    arduino: { adaptor: 'firmata', port: '/dev/ttyACM0' }\n  },\n\n  devices: {\n    led: { driver: 'led', pin: 13 },\n    button: { driver: 'button', pin: 2 }\n  },\n\n  work: function(my) {\n    my.button.on('push', my.led.toggle);\n  }\n}).start();\n```\n\n## Hardware Support\nCylon.js has a extensible system for connecting to hardware devices. The following 14 GPIO devices are currently supported:\n\n  - Analog Sensor\n  - Button\n  - Continuous Servo\n  - Direct Pin\n  - IR Range Sensor\n  - LED\n  - Makey Button (high-resistance button like the [MakeyMakey](http://www.makeymakey.com/))\n  - Maxbotix Ultrasonic Range Finder\n  - Motor\n  - Relay\n  - RGB LED\n  - Servo\n  - Temperature Sensor\n  - TP401 Gas Sensor\n\nMore drivers are coming soon...\n\n## Documentation\nWe're busy adding documentation to our web site at http://cylonjs.com/ please check there as we continue to work on Cylon.js\n\nThank you!\n\n## Contributing\n\nFor our contribution guidelines, please go to [https://github.com/hybridgroup/cylon/blob/master/CONTRIBUTING.md\n](https://github.com/hybridgroup/cylon/blob/master/CONTRIBUTING.md\n).\n\n## Release History\n\nFor the release history, please go to [https://github.com/hybridgroup/cylon-gpio/blob/master/RELEASES.md\n](https://github.com/hybridgroup/cylon-gpio/blob/master/RELEASES.md\n).\n\n## License\nCopyright (c) 2013-2016 The Hybrid Group. Licensed under the Apache 2.0 license.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hybridgroup/cylon-gpio.git"
+  },
+  "version": "0.29.0"
+}
